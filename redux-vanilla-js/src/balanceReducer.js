@@ -6,6 +6,8 @@ export default function balanceReducer(state = 5000, action) {
       return state - action.payload;
     case Types.ADD_MONEY:
       return state + action.payload;
+    case Types.RESET_MONEY:
+      return 0;
 
     // If asked for something not related to banking like making a hot dod
     default:

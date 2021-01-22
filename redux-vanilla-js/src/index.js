@@ -4,7 +4,7 @@ import { createStore } from "redux";
 
 import balanceReducer from "./balanceReducer";
 
-import { addMoney, withdrawMoney } from "./balanceActions";
+import { addMoney, resetMoney, withdrawMoney } from "./balanceActions";
 
 const store = createStore(balanceReducer);
 
@@ -17,10 +17,18 @@ function render() {
 render();
 store.subscribe(render);
 
+store.subscribe(() => console.log("I also will be called"));
+
+store.subscribe(() => console.log(store.getState()));
+
 document.getElementById("increment").addEventListener("click", function () {
   store.dispatch(addMoney(100));
 });
 
 document.getElementById("decrement").addEventListener("click", function () {
   store.dispatch(withdrawMoney(50));
+});
+
+document.getElementById("reset").addEventListener("click", function () {
+  store.dispatch(resetMoney());
 });

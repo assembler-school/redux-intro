@@ -1,6 +1,7 @@
 const Types = {
   WITHDRAW_MONEY: "WITHDRAW_MONEY",
   ADD_MONEY: "ADD_MONEY",
+  RESET_MONEY: "RESET_MONEY",
 };
 
 const addMoney = (amount) => ({
@@ -13,6 +14,10 @@ const withdrawMoney = (amount) => ({
   payload: amount,
 });
 
+const resetMoney = () => ({
+  type: Types.RESET_MONEY,
+});
+
 // Without explicit return
 const exampleExplicit = () => {
   return {
@@ -20,4 +25,4 @@ const exampleExplicit = () => {
   };
 };
 
-export { addMoney, withdrawMoney, Types };
+export { addMoney, withdrawMoney, Types, resetMoney };
