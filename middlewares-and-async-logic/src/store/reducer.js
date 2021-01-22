@@ -2,7 +2,7 @@ import { Types } from "./actions";
 
 const initialState = {
   users: [],
-  status: "not started",
+  status: "I have no users",
 };
 
 export default function reducer(state = initialState, action) {

@@ -26,7 +26,7 @@ function App() {
   return (
     <Provider store={store}>
       <CounterContainer numberToReach={15} />
-      <CounterWithReduxHooks />
+      <CounterWithReduxHooks numberToReach={15} />
     </Provider>
   );
 }
